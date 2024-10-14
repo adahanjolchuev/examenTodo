@@ -2,14 +2,14 @@ import {api as index} from "..";
 
  const api = index.injectEndpoints({
     endpoints: (build) => ({
-        getTodos: build.query<Todo.getTodoResponse, Todo.getTodoRequest>({
+        getTodos: build.query<TODO.getTodoResponse, TODO.getTodoRequest>({
             query: () => ({
                 url: "",
                 method: "GET",
             }),
             providesTags: ["Todo"],
         }),
-        postTodos :build.mutation<Todo.postTodoResponse, Todo.postTodoRequest>({
+        postTodos :build.mutation<TODO.postTodoResponse, TODO.postTodoRequest>({
             query: (data) => ({
                 url: "",
                 method: "POST",
@@ -17,14 +17,14 @@ import {api as index} from "..";
             }),
             invalidatesTags: ["Todo"],
         }),
-        deleteTodos: build.mutation<Todo.deleteResponse, Todo.deleteRequest>({
+        deleteTodos: build.mutation<TODO.deleteResponse, TODO.deleteRequest>({
             query: (_id) => ({
                 url: `${_id}`,
                 method: "DELETE",
             }),
             invalidatesTags: ["Todo"],  
         }),
-        editData: build.mutation<Todo.editResponse, Todo.editRequest>({
+        editData: build.mutation<TODO.editResponse, TODO.editRequest>({
             query: ({_id, updateTodo}) => ({
                 url: `${_id}`,
                 method: "PATCH",

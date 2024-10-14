@@ -33,12 +33,12 @@ const TodoList = () => {
       const formData = new FormData();
       formData.append("file", file);
       const responseImg = await uploadPost(formData).unwrap();
-      const newData = {
+      const newDataAdd = {
         _id: data._id!,
         tittle: data.tittle,
         files: responseImg.url,
       };
-      await postData(newData);
+      await postData(newDataAdd);
       reset();
     } catch (error) {
       console.log(error);
@@ -93,7 +93,8 @@ const TodoList = () => {
                     <button onClick={() => deleteData(el._id)}>Delete</button>
                     <button
                       onClick={() => {
-                        setEditId(el._id!), setValue("tittle", el.tittle);
+                        setEditId(el._id!);
+                        setValue("tittle", el.tittle);
                         setValue("files", el.files);
                       }}
                     >

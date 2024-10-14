@@ -1,4 +1,4 @@
-namespace Todo {
+namespace TODO {
     type getTodoResponse = ICrud[];
     type getTodoRequest = void;
 
