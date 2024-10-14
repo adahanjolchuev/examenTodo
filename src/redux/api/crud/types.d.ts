@@ -1,6 +1,6 @@
 namespace TODO {
-    type getTodoResponse = ICrud[];
-    type getTodoRequest = void;
+    type GetTodoResponse = ICrud[];
+    type GetTodoRequest = void;
 
     type postTodoResponse = ICrud[];
     type postTodoRequest = ICrud;
